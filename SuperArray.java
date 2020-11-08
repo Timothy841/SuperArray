@@ -132,4 +132,15 @@ public class SuperArray{
     return a;
   }
 
+  public boolean equals(SuperArray other){
+    if (size==other.size){
+      for (int i = 0; i<=size;i++){
+        if (this.data[i]!=other.data[i]){
+          return false;
+        }
+      }
+      return true;
+    }
+    return false;
+  }
 }

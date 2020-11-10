@@ -30,8 +30,8 @@ public class SuperArray{
   }
 
   public String get(int index){
-    while (index >= data.length){
-      this.resize();
+    if (index < 0 || index >= size()){
+      throw new IndexOutOfBoundsException("Index("+index+") not within array index");
     }
     return data[index];
   }

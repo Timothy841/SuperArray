@@ -3,6 +3,21 @@ public class SuperArray{
   private String [] data;
   private int size;
 
+  public static void main(String[] args){
+    try{
+      SuperArray a = new SuperArray(10);
+      for (int i = 0; i<10;i++){
+        a.add("d");
+      }
+      System.out.println(a.toString());
+      a.add(48,"3");
+      System.out.println(a.toString());
+    }
+    catch(IndexOutOfBoundsException e){
+      e.printStackTrace();
+    }
+  }
+
   public SuperArray(){
     size = 0;
     data = new String[10];
@@ -90,6 +105,9 @@ public class SuperArray{
   }
 
   public void add(int index, String element){
+    if (index < 0 || index > size()){
+      throw new IndexOutOfBoundsException("Index("+index+") not within array index");
+    }
     if (size>=data.length-1){
       this.resize();
     }

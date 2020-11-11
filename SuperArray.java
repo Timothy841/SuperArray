@@ -7,10 +7,10 @@ public class SuperArray{
     try{
       SuperArray a = new SuperArray(10);
       for (int i = 0; i<10;i++){
-        a.add("d");
+        a.add(""+i);
       }
       System.out.println(a.toString());
-      a.add(48,"3");
+      a.remove(-1);
       System.out.println(a.toString());
     }
     catch(IndexOutOfBoundsException e){
@@ -119,6 +119,9 @@ public class SuperArray{
   }
 
   public String remove(int index){
+    if (index < 0 || index >= size()){
+      throw new IndexOutOfBoundsException("Index("+index+") not within array index");
+    }
     String a = data[index];
     if (size>0){
       for (int i = index; i < size-1; i++){

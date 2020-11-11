@@ -10,7 +10,7 @@ public class SuperArray{
         a.add(""+i);
       }
       System.out.println(a.toString());
-      a.remove(-1);
+      a.set(9,"10");
       System.out.println(a.toString());
     }
     catch(IndexOutOfBoundsException e){
